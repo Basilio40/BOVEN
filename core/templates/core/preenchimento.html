@@ -5,13 +5,13 @@
 {% block content %} 
 
       <!-- BASIC FORM ELELEMNTS -->
-      <div class="row mt">
+      <div class="row">
         <div class="col-lg-12 ">
           <div  style="background-color: #B0F0D9;">
             <h4 class="mb"><i class="fa fa-angle-right"></i> PREENCHA OS DADOS</h4>
             <form class="form-horizontal"  action="{% url 'preenchimento' %}" method="post">{% csrf_token %}
 
-              <div class="form-group">
+              <div class="form-group col-sm-8 col-lg-8">
                 <label class="col-sm-2 col-sm-2 control-label"></label>
                 <div class="col-sm-8 col-lg-8">
                   {{form.distribuidoras|as_crispy_field}}
