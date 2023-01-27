@@ -4,42 +4,30 @@
 
 {% block content %} 
 
-<section id="main-content">
-    <section class="wrapper">
-      <!-- BASIC FORM ELELEMNTS -->
-      <div class="row mt">
-        <div class="col-lg-8">
-          <div class="form-panel" style="background-color: #B0F0D9;">
-            <h4 class="mb"><i class="fa fa-angle-right"></i> DADOS PESSOAIS</h4>
-            <form class="form-horizontal style-form" action="{% url 'preenchimento' %}" method="post">
-              <div class="form-group">
-                <label class="col-sm-2 col-sm-2 control-label"></label>
-                <div class="col-sm-10">
-                  {{form.nome_cliente|as_crispy_field}}
-                </div>
-                <br>
-                <br>
-                <div class="col-sm-10">
-                    {{form.email|as_crispy_field}}
-                </div>
-                <br>
-                <br>
-                <div class="col-sm-10">
-                    {{form.telefone|as_crispy_field}}
-                </div>
-                <br>
+              <form class="form-horizontal"  action="{% url 'calculo' pk=user.pk %}" method="post">
+                {% csrf_token %}
+                <div class="form-group col-sm-12 col-lg-12">
+                  <label class="col-sm-2 col-sm-2 control-label"></label>
+                  <div class="col-sm-8 col-lg-8">
+        
+                      {{form.nome|as_crispy_field}}
 
-              </div>
-              <div class="form-group">
-         
-                <button type="submit" class="btn btn-theme">Enviar</button>
-                <label class="col-lg-2 col-sm-2 control-label">Boven Energia</label>
-                <div class="col-lg-10">
-                  <p class="form-control-static">email@example.com</p>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
+                      {{form.email|as_crispy_field}}
+          
+                      {{form.empresa|as_crispy_field}}
+        
+                      {{form.telefone|as_crispy_field}}
+
+                      <button type="submit" class="btn btn-danger">Enviar</button>
+                      </div>
+                    </div>
+
+                    <br>
+                </form> 
+  
+              
+
+ 
+             
 
         {% endblock content %}
