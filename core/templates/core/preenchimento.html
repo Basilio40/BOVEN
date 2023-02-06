@@ -16,17 +16,40 @@
               <div class="form-group col-sm-12 col-lg-12">
                 <label class="col-sm-2 col-sm-2 control-label"></label>
                 <div class="col-sm-8 col-lg-8">
-                  {{form.distribuidoras|as_crispy_field}}
-                  {{form.grupo_tarifario|as_crispy_field}}
-                  {{form.modalidade|as_crispy_field}}
-                  {{form.consumo_ponta|as_crispy_field}}
-                  {{form.consumo_fponta|as_crispy_field}}
-                  {{form.consumo_demanda_ponta|as_crispy_field}}
-                  {{form.consumo_demanda_fponta|as_crispy_field}}
+                  <div class="col-sm-12 col-lg-12">
+                    {{form.distribuidoras|as_crispy_field}}
+                  </div>
+                  <div class="col-sm-12 col-lg-12">
+                    {{form.grupo_tarifario|as_crispy_field}}
+                  </div>
+                  <div class="col-sm-12 col-lg-12">
+                    {{form.modalidade|as_crispy_field}}
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" onclick="toggleFields(this)" >
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Confirmar Modalidade Azul
+                    </label>
+                  </div>
+                  <div class="col-sm-12 col-lg-12">
+                    {{form.consumo_ponta|as_crispy_field}}
+                  </div>
+                  <div class="col-sm-12 col-lg-12">
+                    {{form.consumo_fponta|as_crispy_field}}
+                  </div>
+                  <div class="col-sm-12 col-lg-12">
+                    {{form.consumo_demanda_fponta|as_crispy_field}}
+                  </div>
+                  <div class="col-sm-12 col-lg-12">
+                    <label class="" for="flexCheckChecked">Demanda Ponta</label>
+                    <br>
+                    <input style="color:black" type="text" class="form-control field col-sm-12 col-lg-12" disabled {{form.consumo_demanda_ponta}}>
+                  </div>
 
 
 
                   <button type="submit" class="btn btn-theme">Enviar</button>
+
 
                   
                 </div>
@@ -34,12 +57,21 @@
 
               <div class="form-group">
                 
-                <div class="col-lg-10">
+                <div class="col-lg-12">
                 </div>
               </div>
             </form>
           </div>
         </div>
+        <script>
+          function toggleFields(checkbox) {
+            var formFields = document.querySelectorAll(".field");
+            for (var i = 0; i < formFields.length; i++) {
+              formFields[i].disabled = !checkbox.checked;
+            }
+          }
+          </script>
         {% endif %}
+        
 
         {% endblock content %}

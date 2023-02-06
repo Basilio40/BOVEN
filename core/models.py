@@ -1710,6 +1710,11 @@ class DadosCliente(models.Model):
 
         }
 
+        if self.modalidade == 'Azul':
+            self.modalidade
+        else:
+            self.consumo_demanda_ponta =float(0)
+            
         fator =  str(self.distribuidoras) + str(self.grupo_tarifario) + str(self.modalidade)
         tarifa_ponta = float(TE_ponta[fator])
         tarifa_fponta = float(TE_fponta[fator])
@@ -3320,6 +3325,11 @@ class DadosCliente(models.Model):
 
         }
 
+        if self.modalidade == 'Azul':
+            self.modalidade
+        else:
+            self.consumo_demanda_ponta =float(0)
+            
         fator =  str(self.distribuidoras) + str(self.grupo_tarifario) + str(self.modalidade)
         tarifa_ponta = float(TE_ponta[fator])
         tarifa_fponta = float(TE_fponta[fator])
