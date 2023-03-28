@@ -152,7 +152,7 @@ class DadosCliente(models.Model):
         Cofins = 0.0405
         icms = 0.18
         desconto_CCEE = 0.5
-        tarifa_E_ACL = 270
+        tarifa_E_ACL = 105
         remuneracao_fixa = 1000
         remuneracao_variavel = 0
         
@@ -2274,7 +2274,7 @@ class DadosCliente(models.Model):
         Cofins = 0.0405
         icms = 0.18
         desconto_CCEE = 0.5
-        tarifa_E_ACL = 270
+        tarifa_E_ACL = 105
         remuneracao_fixa = 1000
         remuneracao_variavel = 0
         
