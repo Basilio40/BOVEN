@@ -155,6 +155,7 @@ class DadosCliente(models.Model):
         tarifa_E_ACL = 105
         remuneracao_fixa = 1000
         remuneracao_variavel = 0
+        encargos = 50
         
         TE_ponta = {
             "AMEA3Azul":"456.17",
