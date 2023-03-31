@@ -12,7 +12,7 @@
             <br>
             <h2 class="form-login-heading" style="color:black;"><img src="{% static 'core\img\logo_boven.png' %}" alt=""></h2>
             <h4 class="mb">PREENCHA OS DADOS</h4>
-            <form class="form-horizontal"  action="{% url 'preenchimento' %}" method="post">{% csrf_token %}
+            <form id="preenchimento_form" class="form-horizontal"  action="{% url 'preenchimento' %}" method="post">{% csrf_token %}
 
               <div class="form-group col-sm-12 col-lg-12">
                 <label class="col-sm-2 col-sm-2 control-label"></label>
@@ -57,5 +57,43 @@
         </div>
         {% endif %}
         
+        <script>
+          // Desabilitar certo campo se modalidade selecionada for verde
+          const form = document.querySelector('form#preenchimento_form')
+          const modalidade_elem = form.querySelector('#id_modalidade')
+          const consumo_elem = form.querySelector('#id_consumo_demanda_ponta')
+          const submitBtn = form.querySelector('button[type="submit"]')
+          form.addEventListener('change', () => {
+            const modalidade = modalidade_elem.value
+            if (modalidade === 'Verde') {
+              consumo_elem.disabled = true
+            } else {
+              consumo_elem.disabled = false
+            }
+          });
 
+          // Submeter o formulario via ajax
+          submitBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            const formData = new FormData(form);
+            console.log(formData)
+            fetch('preenchimento', {
+              method: 'POST',
+              body: formData,
+              headers: {
+                'X-CSRFToken': '{{ csrf_token }}',
+              }
+            })
+            .then(response => {
+              form.reset()
+              // Chamar Modal HTMX
+              const btnModal = document.querySelector('button[data-target="#modalCalc"]');
+              btnModal.click()
+            })
+            .catch(error => {
+              alert(error)
+              console.error('Form submission error:', error);
+            });
+          });
+        </script>
         {% endblock content %}
