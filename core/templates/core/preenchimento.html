@@ -10,6 +10,7 @@
         <div class="col-lg-12 ">
           <div  style="background-color: #95F3C6;">
             <br>
+            <h2 class="form-login-heading" style="color:black;"><img src="{% static 'core\img\logo_boven.png' %}" alt=""></h2>
             <h4 class="mb">PREENCHA OS DADOS</h4>
             <form class="form-horizontal"  action="{% url 'preenchimento' %}" method="post">{% csrf_token %}
 
@@ -25,12 +26,6 @@
                   <div class="col-sm-12 col-lg-12">
                     {{form.modalidade|as_crispy_field}}
                   </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" onclick="toggleFields(this)" >
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Confirmar Modalidade Azul
-                    </label>
-                  </div>
                   <div class="col-sm-12 col-lg-12">
                     {{form.consumo_ponta|as_crispy_field}}
                   </div>
@@ -41,15 +36,12 @@
                     {{form.consumo_demanda_fponta|as_crispy_field}}
                   </div>
                   <div class="col-sm-12 col-lg-12">
-                    <label class="" for="flexCheckChecked">Demanda Ponta</label>
-                    <br>
-                    <input style="color:black" type="text" class="form-control field col-sm-12 col-lg-12" disabled {{form.consumo_demanda_ponta}}>
+                    {{form.consumo_demanda_ponta|as_crispy_field}}>
                   </div>
 
 
-
                   <button type="submit" class="btn btn-theme">Enviar</button>
-
+                
 
                   
                 </div>
@@ -63,14 +55,6 @@
             </form>
           </div>
         </div>
-        <script>
-          function toggleFields(checkbox) {
-            var formFields = document.querySelectorAll(".field");
-            for (var i = 0; i < formFields.length; i++) {
-              formFields[i].disabled = !checkbox.checked;
-            }
-          }
-          </script>
         {% endif %}
         
 

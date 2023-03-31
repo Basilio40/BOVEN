@@ -11,16 +11,16 @@
       <h2 class="form-login-heading" style="color:black;">DESCUBRA SUA ECONOMIA</h2>
       <div class="login-wrap" style="background-color: #95F3C6;padding: 40px; ">
         <div class="col-lg-12 col-md-12 col-sm-12" >
-          <a href="{% url 'dados_pessoais' %}" >
-        <button 
-          type="button" class="btn btn-warning btn-lg btn-block" 
+          <button 
+          type="button" 
+          class="btn btn-theme03 btn-lg btn-block" 
           data-toggle="modal" 
-          data-target="#modalCalc" 
-          hx-get="{% url 'dados_pessoais' %}"
-          hx-target="#calculo"
+          data-target="#modalPreench" 
+          hx-get="{% url 'preenchimento'%}"
+          hx-target="#preenchimento"
           hx-swap="innerHTML"
-        ><h5 style="color: black;">VER RESULTADO</h5></button></a>
-      <br>
+          ><h5 style="color: black;">PREENCHA AQUI OS DADOS</h5></button>
+        <br>
 
       </div>
 
@@ -36,17 +36,19 @@
           <br>
         </div>
           <div class="col-lg-12 col-md-12 col-sm-12" >
-            <button 
-              type="button" 
-              class="btn btn-theme03 btn-lg btn-block" 
-              data-toggle="modal" 
-              data-target="#modalPreench" 
-              hx-get="{% url 'preenchimento'%}"
-              hx-target="#preenchimento"
-              hx-swap="innerHTML"
-              ><h5 style="color: black;">PREENCHA AQUI OS DADOS</h5></button>
+            <a href="{% url 'dados_pessoais' %}" >
+              <button 
+                type="button" class="btn btn-warning btn-lg btn-block" 
+                data-toggle="modal" 
+                data-target="#modalCalc" 
+                hx-get="{% url 'dados_pessoais' %}"
+                hx-target="#calculo"
+                hx-swap="innerHTML"
+              ><h5 style="color: black;">VER RESULTADO</h5></button></a>
             <br>
           </div>
+
+
 
         <div class="registration">
           MERCADO LIVRE DE ENERGIA<br/>

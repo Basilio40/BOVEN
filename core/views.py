@@ -37,7 +37,7 @@ def preenchimento(request):
         form = DadosCalculoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('preenchimento')
     return render(request, 'core/preenchimento.html', context)
 
 def dados_pessoais(request):
