@@ -122,11 +122,6 @@ class DadosCliente(models.Model):
         ('A4a','A4a'),
         ('A4b','A4b'),
         ('AS','AS'),
-        ('B','B'),
-        ('B1','B1'),
-        ('B2','B2'),
-        ('B3','B3'),
-        ('B4','B4'),
 
     ]
     MODALIDADE = [
