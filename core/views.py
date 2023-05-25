@@ -1,15 +1,13 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import DadosCliente, MinhasFaturas
+from .models import DadosCliente, MinhasFaturas,DadosPessoais
 from .forms import DadosCalculoForm , UpFaturas,CustomUserCreationForm,DadosPessoaisForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
-from django.views.decorators.csrf import csrf_protect
 
 # @login_required
-# @csrf_protect
 def index(request):
     return render(request, 'core/index.html')
 
@@ -37,21 +35,22 @@ def preenchimento(request):
    
     if request.method == 'POST':
         form = DadosCalculoForm(request.POST)
-        print(request.POST)
         if form.is_valid():
             form.save()
             return redirect('index')
     return render(request, 'core/preenchimento.html', context)
 
 def dados_pessoais(request):
-    context = {
-        'form':DadosPessoaisForm(),
-    }
     if request.method == 'POST':
-        form = DadosPessoaisForm(request.POST)
-        if form.is_valid():
-            form.save()
-    return render(request, 'core/dados_pessoais.html', context)
+        nome = request.POST.get("nome")
+        print(nome)
+        email = request.POST.get("email")
+        empresa = request.POST.get("empresa")
+        telefone = request.POST.get("telefone")
+        form = DadosPessoais.objects.create(nome=nome,email=email,empresa=empresa,telefone=telefone)
+        form.save()
+        return redirect('calculo')
+    return render(request,'core/dados_pessoais.html')
 
 def add_modal(request):
     return render(request, 'hx/add_modal.html')
@@ -73,7 +72,7 @@ def upfatura(request):
         return render(request, "core/upfaturas.html",context)
  
  
-def calculo(request,pk):
+def calculo(request):
     dados = DadosCliente.objects.last()
     context = {
         'dados':dados

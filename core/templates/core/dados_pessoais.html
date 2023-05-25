@@ -4,19 +4,19 @@
 
 {% block content %} 
 
-              <form class="form-horizontal"  action="{% url 'calculo' pk=user.pk %}" method="post">
+              <form class="form-horizontal"  action="{% url 'dados_pessoais' %}" method="POST">
                 {% csrf_token %}
                 <div class="form-group col-sm-12 col-lg-12">
                   <label class="col-sm-2 col-sm-2 control-label"></label>
                   <div class="col-sm-8 col-lg-8">
         
-                      {{form.nome|as_crispy_field}}
+                    <input  style="color: rgb(13, 13, 14);" type="text"  class="form-control" name="nome">
 
-                      {{form.email|as_crispy_field}}
+                    <input  style="color: rgb(13, 13, 14);" type="text"  class="form-control" name="email">
           
-                      {{form.empresa|as_crispy_field}}
+                    <input  style="color: rgb(13, 13, 14);" type="text"  class="form-control" name="empresa">
         
-                      {{form.telefone|as_crispy_field}}
+                    <input  style="color: rgb(13, 13, 14);" type="text"  class="form-control" name="telefone">
 
                       <button type="submit" class="btn btn-danger">Enviar</button>
                       </div>
