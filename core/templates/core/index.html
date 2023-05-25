@@ -8,31 +8,34 @@
   
   <div class="container">
     <form class="form-login" action="index.html">
-      <h2 class="form-login-heading" style="color:black;">DESCUBRA SUA ECONOMIA</h2>
-      <div class="login-wrap" style="background-color: #95F3C6;padding: 40px; ">
+      <h2 class="form-login-heading" style="background-color:#323F48;color:#FFF7E1">DESCUBRA SUA ECONOMIA</h2>
+      <div class="login-wrap" style="background-color:#FFF7E1;padding: 40px; ">
         <div class="col-lg-12 col-md-12 col-sm-12" >
           <button 
           type="button" 
-          class="btn btn-theme03 btn-lg btn-block" 
+          style="border-color: #E35205;"
+          class="btn btn-warning-outline  btn-lg btn-block" 
           data-toggle="modal" 
           data-target="#modalPreench" 
           hx-get="{% url 'preenchimento'%}"
           hx-target="#preenchimento"
           hx-swap="innerHTML"
-          ><h5 style="color: black;">PREENCHA AQUI OS DADOS</h5></button>
+          ><h5 style="color: #E35205;">PREENCHA AQUI OS DADOS</h5></button>
         <br>
 
       </div>
 
         <div class="col-lg-12 col-md-12 col-sm-12" >
           <button
-             type="button" class="btn btn-theme03 btn-lg btn-block" 
+             type="button" 
+             style="border-color: #E35205;"
+             class="btn btn-warning-outline  btn-lg btn-block"  
              data-toggle="modal" 
              data-target="#myModal" 
              hx-get="{% url 'upfatura' %}"
              hx-target="#postagem"
              hx-swap="innerHTML"
-             ><h5 style="color: black;">ENVIE SUA FATURA </h5></button>
+             ><h5 style="color: #E35205;">ENVIE SUA FATURA </h5></button>
           <br>
         </div>
           <div class="col-lg-12 col-md-12 col-sm-12" >
@@ -50,7 +53,7 @@
 
 
 
-        <div class="registration">
+        <div class="registration" style="color: #E35205;">
           MERCADO LIVRE DE ENERGIA<br/>
           <br>
             {% include '../hx/add_modal.html' %}
