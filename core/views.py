@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from django.views.decorators.csrf import csrf_exempt
 
 # @login_required
 def index(request):
@@ -71,7 +72,8 @@ def upfatura(request):
         mf.save()
         return render(request, "core/upfaturas.html",context)
  
- 
+
+@csrf_exempt
 def calculo(request):
     dados = DadosCliente.objects.last()
     context = {
