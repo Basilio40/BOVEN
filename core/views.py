@@ -41,6 +41,7 @@ def preenchimento(request):
             return redirect('index')
     return render(request, 'core/preenchimento.html', context)
 
+
 def dados_pessoais(request):
     if request.method == 'POST':
         nome = request.POST.get("nome")
@@ -73,7 +74,7 @@ def upfatura(request):
         return render(request, "core/upfaturas.html",context)
  
 
-@csrf_exempt
+
 def calculo(request):
     dados = DadosCliente.objects.last()
     context = {
