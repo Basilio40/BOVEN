@@ -73,7 +73,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'calc_energia.wsgi.application'
-X_FRAME_OPTIONS = "ALLOW-FROM"
+X_FRAME_OPTIONS = "ALLOW-FROM *"
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
