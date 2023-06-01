@@ -3,10 +3,8 @@ from django.http import HttpResponse
 from .models import DadosCliente, MinhasFaturas,DadosPessoais
 from .forms import DadosCalculoForm , UpFaturas,CustomUserCreationForm,DadosPessoaisForm
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
-
 
 # @login_required
 def index(request):
@@ -41,7 +39,6 @@ def preenchimento(request):
             return redirect('index')
     return render(request, 'core/preenchimento.html', context)
 
-
 def dados_pessoais(request):
     if request.method == 'POST':
         nome = request.POST.get("nome")
@@ -73,8 +70,7 @@ def upfatura(request):
         mf.save()
         return render(request, "core/upfaturas.html",context)
  
-
-
+ 
 def calculo(request):
     dados = DadosCliente.objects.last()
     context = {
