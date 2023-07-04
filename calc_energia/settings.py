@@ -73,7 +73,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'calc_energia.wsgi.application'
-X_FRAME_OPTIONS = "ALLOW-FROM"
+X_FRAME_OPTIONS = 'ALLOW-FROM https://calculadora.boven.com.br/'
+CSRF_TRUSTED_ORIGINS = ['https://calculadora.boven.com.br/','https://calculadora.boven.com.br/calculo/']
+
+
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
