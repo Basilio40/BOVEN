@@ -75,6 +75,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'calc_energia.wsgi.application'
 X_FRAME_OPTIONS = 'ALLOW-FROM calculadora.boven.com.br'
 CSRF_TRUSTED_ORIGINS = ['calculadora.boven.com.br']
+CSRF_COOKIE_SAMESITE=None
 
 
 
