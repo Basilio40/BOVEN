@@ -8,9 +8,11 @@ from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 
 # @login_required
+@csrf_exempt
 def index(request):
     return render(request, 'core/index.html')
 
+@csrf_exempt
 def registro(request):
     data = {
         'form': CustomUserCreationForm()
@@ -27,7 +29,7 @@ def registro(request):
 
     return render(request, 'registration/registro.html',data)
 
-
+@csrf_exempt
 def preenchimento(request):
     context = {
         'form':DadosCalculoForm(),
@@ -40,6 +42,8 @@ def preenchimento(request):
             return redirect('index')
     return render(request, 'core/preenchimento.html', context)
 
+
+@csrf_exempt
 def dados_pessoais(request):
     if request.method == 'POST':
         nome = request.POST.get("nome")
@@ -58,6 +62,7 @@ def add_modal(request):
 def modalcalc1(request):
     return render(request, 'hx/modal_calc2.html')
 
+@csrf_exempt
 def upfatura(request):
     context = {
         'up':UpFaturas(),
