@@ -4380,8 +4380,9 @@ class DadosCliente(models.Model):
         total_final_livre = energia_livre_sem_imposto+total_cativo_imposto_encargo_tusd+total_livre_imposto_demanda+total_imposto_livre+gestao
         economia = total_final_cativo-total_final_livre
         economia_percentagem=1-(total_final_livre/total_final_cativo)
- 
-        return f'{economia:.2f}'
+        economia_moeda = "R${:,.2f}".format(economia).replace(",", "X").replace(".", ",").replace("X", ".")
+        
+        return economia_moeda
     
     
     

@@ -5,13 +5,13 @@
 {% block content %} 
 
       <!-- BASIC FORM ELELEMNTS -->
-      <div class="row">
-        <div class="col-lg-12 ">
-          <div  style="background-color: #95F3C6;">
+      <div class="row" style="background-color: #FFF7E1;color:black;">
+        <div class="col-lg-12 " style="background-color: #FFF7E1;color:black;">
+          <div  style="background-color: #FFF7E1;color:black;">
             <br>
-            <h2 class="form-login-heading" style="color:black;"><img src="{% static 'core\img\logo_boven.png' %}" alt=""></h2>
+            <h2 class="form-login-heading" style="background-color: #FFF7E1;color:black;"><img src="{% static 'core\img\logo_boven.png' %}" alt=""></h2>
             <h4 class="mb">PREENCHA OS DADOS</h4>
-            <form id="preenchimento_form" class="form-horizontal"  action="{% url 'preenchimento' %}" method="post">{% csrf_token %}
+            <form id="preenchimento_form" class="form-horizontal" style="background-color: #FFF7E1;color:black;"  action="{% url 'preenchimento' %}" method="post">{% csrf_token %}
 
               <div class="form-group col-sm-12 col-lg-12">
                 <label class="col-sm-2 col-sm-2 control-label"></label>
@@ -35,11 +35,11 @@
                     {{form.consumo_demanda_fponta|as_crispy_field}}
                   </div>
                   <div class="col-sm-12 col-lg-12">
-                    {{form.consumo_demanda_ponta|as_crispy_field}}>
+                    {{form.consumo_demanda_ponta|as_crispy_field}}
                   </div>
 
 
-                  <button type="submit" class="btn btn-theme">Enviar</button>
+                  <button type="submit" class="btn btn-theme" style="background-color: #E35205;color:#fff; border:none">Enviar</button>
                 
 
                   

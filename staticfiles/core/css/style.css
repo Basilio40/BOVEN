@@ -34,11 +34,11 @@ a, a:hover, a:focus {
 }
 ::selection {
 
-    background: #4ECDC4;
+    background: #FFF7E1;
     color: #fff;
 }
 ::-moz-selection {
-    background: #4ECDC4;
+    background: #FFF7E1;
     color: #fff;
 }
 
@@ -49,7 +49,7 @@ a, a:hover, a:focus {
 
 /* Bootstrap Modifications */
 .modal-header {
-	background: #4ECDC4;
+	background: #FFF7E1;
 }
 
 .modal-title {
@@ -79,7 +79,7 @@ a, a:hover, a:focus {
 /*Theme Backgrounds*/
 
 .bg-theme {
-	background-color: #4ECDC4;
+	background-color: #FFF7E1;
 }
 
 .bg-theme02 {
@@ -87,7 +87,7 @@ a, a:hover, a:focus {
 }
 
 .bg-theme03 {
-  background-color: #48cfad;
+  background-color: #FFF7E1;
 }
 
 .bg-theme04 {
@@ -97,8 +97,8 @@ a, a:hover, a:focus {
 
 .btn-theme {
   color: #000;
-  background-color: #4ECDC4;
-  border-color: #48bcb4;
+  background-color: #FFF7E1;
+  border-color: #FFF7E1;
 }
 .btn-theme:hover,
 .btn-theme:focus,
@@ -106,8 +106,8 @@ a, a:hover, a:focus {
 .btn-theme.active,
 .open .dropdown-toggle.btn-theme {
   color: #000;
-  background-color: #48bcb4;
-  border-color: #48bcb4;
+  background-color: #FFF7E1;
+  border-color: #FFF7E1;
 }
 
 .btn-theme02 {
@@ -127,8 +127,8 @@ a, a:hover, a:focus {
 
 .btn-theme03 {
   color: #fff;
-  background-color: #48cfad;
-  border-color: #37bc9b;
+  background-color: #FFF7E1;
+  border-color: #FFF7E1;
 }
 .btn-theme03:hover,
 .btn-theme03:focus,
@@ -136,8 +136,8 @@ a, a:hover, a:focus {
 .btn-theme03.active,
 .open .dropdown-toggle.btn-theme03 {
   color: #fff;
-  background-color: #37bc9b;
-  border-color: #37bc9b;
+  background-color: #FFF7E1;
+  border-color: #FFF7E1;
 }
 
 .btn-theme04 {
@@ -156,9 +156,9 @@ a, a:hover, a:focus {
 }
 
 .btn-clear-g {
-	color: #48bcb4;
+	color: #FFF7E1;
 	background: transparent;
-	border-color: #48bcb4;
+	border-color: #FFF7E1;
 }
 
 .btn-clear-g:hover {
@@ -212,7 +212,7 @@ hr {
 }
 
 .bg-theme {
-	background-color: #4ECDC4;
+	background-color: #FFF7E1;
 }
 
 ul.top-menu > li > .logout {
@@ -729,9 +729,9 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     border-top-color: #FCB322 !important;
 }
 .notify-arrow-green {
-    border-color: transparent transparent #4ECDC4;
-    border-bottom-color: #4ECDC4 !important;
-    border-top-color: #4ECDC4 !important;
+    border-color: transparent transparent #FFF7E1;
+    border-bottom-color: #FFF7E1 !important;
+    border-top-color: #FFF7E1 !important;
 }
 
 
@@ -995,10 +995,10 @@ PANELS CONFIGURATIONS
 /*Green Panel*/
 .green-panel {
 	text-align: center;
-	background: #4ECDC4;
+	background: #FFF7E1;
 }
 .green-panel .green-header {
-	background: #43b1a9;
+	background: #FFF7E1;
 	padding: 3px;
 	margin-bottom: 15px;
 }
@@ -1618,7 +1618,7 @@ PANELS CONFIGURATIONS
 
 .fontawesome-list i {
 	margin-right: 8px;
-}
+
 
 /* Grid Showcase*/
 

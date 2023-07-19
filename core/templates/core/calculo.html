@@ -5,17 +5,18 @@
 <br>
 <div class="container">
         
-        <form class="form-login" action="index.html">{% csrf_token %}
-          <h2 class="form-login-heading" style="color:black;"><img src="{% static 'core\img\logo_boven.png' %}" alt=""></h2>
-          <div class="login-wrap" style="background-color: #95F3C6;padding: 40px; ">
+        <form class="form-login" style="background-color: #FFF7E1; border:none" action="index.html">{% csrf_token %}
+          <h2 class="form-login-heading" style="background-color: #FFF7E1;color:black;"><img src="{% static 'core\img\logo_boven.png' %}" alt=""></h2>
+          <div class="login-wrap" style="background-color: #FFF7E1;padding: 40px; ">
                 <h4>Economize até <b>{{dados.fator}}</b> na sua conta de luz!</h4>
                 <main role="main" class="inner cover">
                         
                 </main>
                 <div class="card">
                 <div class="card-body">
+                        <br>
                         <h1 class="card-title text-center"><b>Economia Mensal</b></h1>
-                        <p class="card-text text-center"><h1 class="text-center">R$ {{dados.economia}}</h1></p>
+                        <p class="card-text text-center"><h1 class="text-center" style="color:#E35205;"><b>{{dados.economia}}</b></h1></p>
                         <p class="card-text text-center"><h5 class="card-text text-center">* Resultado estimado para analise completa envie a fatura para 
                                 <br> E-mail: viabilidade@boven.com.br</h5></p>
                 </div>
