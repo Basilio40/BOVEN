@@ -119,8 +119,6 @@ class DadosCliente(models.Model):
         ('A3','A3'),
         ('A3a','A3a'),
         ('A4','A4'),
-        ('A4a','A4a'),
-        ('A4b','A4b'),
         ('AS','AS'),
 
     ]
