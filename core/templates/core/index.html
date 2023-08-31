@@ -39,7 +39,7 @@
              ><h5 style="color: #E35205;">ENVIE SUA FATURA </h5></button>
           <br>
         </div>
-          <div class="col-lg-12 col-md-12 col-sm-12" >
+          <div class="col-lg-12 col-md-12 col-sm-12 hidden" >
             <a href="{% url 'dados_pessoais' %}" >
               <button 
                 type="button" class="btn btn-warning btn-lg btn-block" 
@@ -54,15 +54,12 @@
 
 
 
-        <div class="registration" style="color: #E35205;">
-          MERCADO LIVRE DE ENERGIA<br/>
+        <div class="registration" style="color: #E35205;"></div>
           <br>
             {% include '../hx/add_modal.html' %}
             {% include '../hx/hx_preenchimento.html' %}
             {% include '../hx/modal_calc.html' %}
 
-            
-        </div>
       </div>
       
       

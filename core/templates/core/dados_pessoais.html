@@ -4,8 +4,12 @@
 
 {% block content %} 
 
+
+
               <form class="form-horizontal"  action="{% url 'dados_pessoais' %}" method="POST">
                 {% csrf_token %}
+                <h2 class="form-login-heading" style="background-color:#323F48;color:#FFF7E1">Insira seus dados e descubra 
+                  a sua economia</h2>
                 <div class="form-group col-sm-12 col-lg-12" style="background-color: #FFF7E1;color:black;">
                   <label class="col-sm-2 col-sm-2 control-label"></label>
                   <div class="col-sm-8 col-lg-8">
@@ -24,14 +28,28 @@
                     <label class="col-sm-2 col-sm-2 control-label" style="color:black;">
                       Telefone
                     </label>
-                    <input  style="color: rgb(13, 13, 14);" type="text"  class="form-control" name="telefone">
-
+                    <input  style="color: rgb(13, 13, 14);" type="text" id="telefone" class="form-control" name="telefone"  />
+                      <br>
                       <button type="submit" class="btn btn-danger" style="background-color: #E35205;color:#fff; border:none">Enviar</button>
                       </div>
                     </div>
 
                     <br>
                 </form> 
+
+                <script>
+                  const telefone = document.getElementById('telefone') // Seletor do campo de telefone
+
+                  telefone.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo
+                  telefone.addEventListener('change', (e) => mascaraTelefone(e.target.value)) // Dispara quando autocompletado o campo
+                  
+                  const mascaraTelefone = (valor) => {
+                      valor = valor.replace(/\D/g, "")
+                      valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
+                      valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
+                      telefone.value = valor // Insere o(s) valor(es) no campo
+                  }
+                </script>
   
                 
 
