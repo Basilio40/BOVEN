@@ -70,11 +70,13 @@ def upfatura(request):
     if request.method == "GET":
         return render(request, "core/upfaturas.html",context)
     elif request.method == "POST":
-        file = request.FILES.get("my_file")
+        titulo = request.POST.get("minha_imagem")
+        file = request.FILES.get("meu_arq")
+        print(file)
         
-        mf = MinhasFaturas(title= "minha_imagem", arq=file)
+        mf = MinhasFaturas(titulo= "minha_imagem", arquivo = file)
         mf.save()
-        return render(request, "core/upfaturas.html",context)
+        return redirect('index')
  
 @csrf_exempt
 def calculo(request):

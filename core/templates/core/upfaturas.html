@@ -4,8 +4,25 @@
 
 {% block content %}
 
-<form action="{% url 'upfatura'%}" method="POST" enctype="multipart/form-data" style="background-color: #FFF7E1;color: black;">{% csrf_token %}
-    {{up|crispy}}
+<form action="{% url 'upfatura'%}" method="POST"  enctype="multipart/form-data" style="background-color: #FFF7E1;color: black;">{% csrf_token %}
+
+    <h2 class="form-login-heading" style="background-color:#323F48;color:#FFF7E1">envie sua fatura de energia</h2>
+    <div class="col-sm-8 col-lg-8">
+        <br>
+        <label class="col-sm-2 col-sm-2 control-label" style="color:black;">
+          Titulo
+        </label>
+        <input  style="color: rgb(13, 13, 14);" type="text"  class="form-control" name="minha_imagem">
+    </div>
+    <div class="col-sm-8 col-lg-8">
+        <label class="col-sm-2 col-sm-2 control-label" style="color:black;">
+          ARQUIVO
+        </label>
+        <input  style="color: rgb(13, 13, 14);" type="file"  class="form-control" name="meu_arq">
+        <br>
     <input type="submit" value=" enviar">
+    <br>
+</div>
+</form>
 
 {% endblock content %}
