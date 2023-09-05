@@ -4389,7 +4389,7 @@ class MinhasFaturas(models.Model):
     arquivo = models.FileField(upload_to='img')
     
     def __str__(self):
-        return self.title
+        return self.titulo
     
 
 class DadosPessoais(models.Model):
