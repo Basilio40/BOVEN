@@ -1967,6 +1967,9 @@ ul li {
 }
 .login-wrap {
 	padding: 20px;
+    display: flex;
+    flex-direction: column;
+
 }
 .login-wrap .registration {
 	text-align: center;
