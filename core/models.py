@@ -145,10 +145,10 @@ class DadosCliente(models.Model):
         Cofins = 0.0405
         icms = 0.18
         desconto_CCEE = 0.5
-        tarifa_E_ACL = 105
-        remuneracao_fixa = 1000
+        tarifa_E_ACL = 160
+        remuneracao_fixa = 50
         remuneracao_variavel = 0
-        encargos = 50
+        encargos = 25
         
         TE_ponta = {
             "AMEA3Azul":"456.17",
